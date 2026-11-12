@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Movie Trailer — John Zwiers</title>
+<meta name="description" content="A 30-second trailer for a SYFY broadcast of Earth vs. the Flying Saucers (1956), built scene by scene in After Effects and cut together in Premiere Pro.">
+<meta property="og:title" content="Movie Trailer — John Zwiers">
+<meta property="og:description" content="A 30-second trailer for a SYFY broadcast of Earth vs. the Flying Saucers (1956), built scene by scene in After Effects and cut together in Premiere Pro.">
+<meta property="og:image" content="https://jhzwiers-design.github.io/MovieTrailer/images/share.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0e0e0e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e0e0e;
+    --ink: #ffffff;
+    --body: #dcdcdc;
+    --muted: #9a9a9a;
+    --rule: #2e2e2e;
+    --pad: clamp(16px, 4vw, 40px);
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--body);
+    font: 400 16px/1.55 "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+    letter-spacing: .005em;
+  }
+  a { color: var(--ink); text-underline-offset: 3px; }
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 0 var(--pad); }
+  header.top, footer {
+    display: flex; justify-content: space-between; gap: 16px;
+    font-size: 13px; color: var(--muted);
+    padding: 22px 0;
+  }
+  header.top b, footer b { color: var(--ink); font-weight: 600; }
+
+  /* 12-column grid; text hangs at about a third across, like the book */
+  .grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; }
+  .hang { grid-column: 5 / span 8; }
+  .side { grid-column: 1 / span 3; }
+
+  video, img { display: block; width: 100%; height: auto; }
+  video { background: #000; outline: 1px solid rgba(255,255,255,.75); outline-offset: -1px; aspect-ratio: 16 / 9; }
+  .frame img { outline: 1px solid rgba(255,255,255,.75); outline-offset: -1px; }
+
+  h1, h2 { color: var(--ink); font-weight: 400; letter-spacing: -.018em; margin: 0; text-wrap: balance; }
+  h1 { font-size: clamp(34px, 5vw, 56px); line-height: 1.05; }
+  h2 { font-size: clamp(26px, 3.4vw, 38px); line-height: 1.1; }
+  .lede { font-size: clamp(17px, 1.6vw, 20px); line-height: 1.45; color: #e8e8e8; margin: 18px 0 0; max-width: 40em; text-wrap: pretty; }
+  p { margin: 0 0 12px; text-wrap: pretty; }
+  .cap { font-size: 13px; line-height: 1.45; color: #bdbdbd; margin-top: 10px; }
+  .cap b, .label { color: var(--ink); font-weight: 600; }
+  .label { font-size: 13px; display: block; margin-bottom: 6px; }
+
+  section { padding: clamp(56px, 9vw, 120px) 0 0; }
+  .hero { padding-top: 8px; }
+  .intro { margin-top: 40px; }
+  .meta { font-size: 13px; color: var(--muted); line-height: 1.6; padding-top: 8px; }
+  .meta b { color: var(--ink); font-weight: 600; }
+
+  .strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px; }
+  .steps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 36px; }
+  .steps .box { aspect-ratio: 16 / 10; overflow: hidden; background: #fff; }
+  .steps .box img { width: 100%; height: 100%; object-fit: cover; }
+  .steps .box.doc img { object-fit: contain; padding: 10px; }
+  .steps .box.film { background: #000; }
+  .steps .num { color: var(--ink); font-weight: 600; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 36px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 28px; }
+
+  table { width: 100%; border-collapse: collapse; margin-top: 28px; font-size: 14px; }
+  td { padding: 11px 16px 11px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  tr:first-child td { border-top: 1px solid var(--rule); }
+  td:first-child { color: var(--muted); width: 32%; }
+  footer { margin-top: clamp(64px, 10vw, 140px); border-top: 1px solid var(--rule); }
+
+  @media (max-width: 860px) {
+    .hang, .side { grid-column: 1 / -1; }
+    .side { margin-bottom: 16px; }
+    .steps { grid-template-columns: 1fr; }
+    .strip { grid-template-columns: repeat(2, 1fr); }
+    .pair, .two { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <span><b>Movie Trailer</b></span>
+    <span>John Zwiers</span>
+  </header>
+
+  <!-- Final trailer -->
+  <section class="hero" aria-label="Final trailer">
+    <video controls playsinline preload="metadata" poster="images/poster-trailer.jpg">
+      <source src="trailer.mp4" type="video/mp4">
+    </video>
+    <p class="cap"><b>Final trailer</b> · 30 seconds · for SYFY</p>
+
+    <div class="grid intro">
+      <div class="side meta">
+        <b>Motion Design 2</b><br>
+        Professor Matt Normand<br>
+        Loyola University New Orleans<br>
+        January 26 – February 11, 2026
+      </div>
+      <div class="hang">
+        <h1>Earth vs. the Flying Saucers.</h1>
+        <p class="lede">A 30-second trailer for a SYFY broadcast of the colorized 1956 film. Each scene was built in After Effects with its own type and effects, then cut together in Premiere Pro.</p>
+      </div>
+    </div>
+
+    <div class="strip">
+      <figure class="frame" style="margin:0"><img src="images/frame-visitors.jpg" alt="The word Visitors over a night sky with a shooting star" loading="lazy"><figcaption class="cap"><b>0:04</b> Visitors</figcaption></figure>
+      <figure class="frame" style="margin:0"><img src="images/frame-another-world.jpg" alt="From another world, stacked over a beach road" loading="lazy"><figcaption class="cap"><b>0:09</b> From another world</figcaption></figure>
+      <figure class="frame" style="margin:0"><img src="images/frame-wage-war.jpg" alt="Wage war during Earth, beside a landed saucer" loading="lazy"><figcaption class="cap"><b>0:14</b> Wage war during Earth</figcaption></figure>
+      <figure class="frame" style="margin:0"><img src="images/frame-chaos.jpg" alt="Chaos and destruction mapped onto a burning building" loading="lazy"><figcaption class="cap"><b>0:25</b> Chaos &amp; destruction</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- How it was made -->
+  <section aria-labelledby="made">
+    <div class="grid">
+      <div class="hang">
+        <h2 id="made">How it was made.</h2>
+        <p class="lede">Typography was the most important part of the brief, set in the network’s own typeface, SYFY Hero. The trailer ends with the SYFY logo animated inside the film.</p>
+      </div>
+    </div>
+    <div class="steps">
+      <figure style="margin:0"><div class="box doc"><img src="images/make-1-storyboards.jpg" alt="Three storyboards for the SYFY logo animation" loading="lazy"></div><figcaption class="cap"><span class="num">1 · Logo concepts.</span> Three storyboards for animating the SYFY logo: spaceships, a flying saucer and science flasks.</figcaption></figure>
+      <figure style="margin:0"><div class="box doc"><img src="images/make-2-typography.jpg" alt="Typography layouts over frames from the film" loading="lazy"></div><figcaption class="cap"><span class="num">2 · Typography.</span> Trailer copy set over clean frames from the film, stacked so one word leads each scene.</figcaption></figure>
+      <figure style="margin:0"><div class="box film frame"><img src="images/make-3-building.jpg" alt="The words chaos and destruction on a building as it explodes" loading="lazy"></div><figcaption class="cap"><span class="num">3 · Words on the building.</span> Type set on Illustrator’s perspective grid, then layered in After Effects with a copy of the explosion on top, so the blast bursts over the words.</figcaption></figure>
+      <figure style="margin:0"><div class="box film frame"><img src="images/make-4-logo.jpg" alt="A flying saucer passing over the SYFY logo in the sky" loading="lazy"></div><figcaption class="cap"><span class="num">4 · The logo in the film.</span> The UFO rotoscoped from the footage, so the SYFY logo appears inside the movie.</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- Process cuts -->
+  <section aria-labelledby="process">
+    <div class="grid">
+      <div class="hang">
+        <h2 id="process">The process.</h2>
+        <p class="lede">Two full edits from the last review before the final.</p>
+      </div>
+    </div>
+    <div class="pair">
+      <div>
+        <video controls playsinline preload="none" poster="images/poster-cut1.jpg">
+          <source src="cut1.mp4" type="video/mp4">
+        </video>
+        <p class="cap"><b>Cut 1 · February 8</b> · 32 seconds<br>The first full edit with every scene in place.</p>
+      </div>
+      <div>
+        <video controls playsinline preload="none" poster="images/poster-cut2.jpg">
+          <source src="cut2.mp4" type="video/mp4">
+        </video>
+        <p class="cap"><b>Cut 2 · February 9</b> · 33 seconds<br>Refined, with black-and-white explosion shots from the film.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="hang">
+        <div class="two">
+          <p><span class="label">What changed</span>The final drops the black-and-white explosion shots and comes in at 30 seconds.</p>
+          <p><span class="label">Sound</span>The trailer’s audio comes from an early montage in the film.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credits -->
+  <section aria-labelledby="credits">
+    <div class="grid">
+      <div class="hang">
+        <h2 id="credits">Credits.</h2>
+        <table>
+          <tr><td>Design</td><td>John Zwiers</td></tr>
+          <tr><td>Course</td><td>Motion Design 2, Loyola University New Orleans</td></tr>
+          <tr><td>Professor</td><td>Matt Normand</td></tr>
+          <tr><td>Film</td><td><i>Earth vs. the Flying Saucers</i>, 1956, directed by Fred F. Sears, in a colorized version</td></tr>
+          <tr><td>Network</td><td>SYFY</td></tr>
+          <tr><td>Typeface</td><td>SYFY Hero</td></tr>
+          <tr><td>Sound</td><td>An early montage in the film</td></tr>
+          <tr><td>Made with</td><td>Adobe Illustrator, Adobe After Effects, Adobe Premiere Pro</td></tr>
+        </table>
+        <p class="cap" style="margin-top:24px">This film continued into my next project, <a href="https://jhzwiers-design.github.io/MovieTitleTimeMachine/">Movie Title Time Machine</a>, an opening title sequence for the same movie.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span><b>John Zwiers</b> · Graphic designer, New Orleans</span>
+    <span>2026</span>
+  </footer>
+</div>
+</body>
+</html>
